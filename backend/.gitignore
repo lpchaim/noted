@@ -1,3 +1,5 @@
+# misc
+
 /.phpunit.cache
 /node_modules
 /public/build
@@ -17,3 +19,13 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml

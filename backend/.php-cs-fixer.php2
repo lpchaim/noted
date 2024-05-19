@@ -1,0 +1,14 @@
+<?php
+
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+return (new Config())
+    ->setUsingCache(true)
+    ->setRules(["@PSR12"])
+    ->setFinder((new Finder())
+        ->in('./app')
+        ->ignoreDotFiles(true)
+        ->ignoreUnreadableDirs(true)
+    )
+;
