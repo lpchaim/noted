@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, config, ... }:
 
 {
   # https://devenv.sh/basics/
@@ -7,6 +7,7 @@
   # https://devenv.sh/packages/
   packages = with pkgs; [
     nodePackages.intelephense
+    nodePackages.typescript-language-server
     sqlite
   ];
 
@@ -32,6 +33,11 @@
   # https://devenv.sh/languages/
   languages = {
     nix.enable = true;
+    javascript = {
+      enable = true;
+      package = pkgs.nodejs_21;
+      yarn.enable = true;
+    };
     php = {
       enable = true;
       extensions = [ "memcached" "xdebug" ];

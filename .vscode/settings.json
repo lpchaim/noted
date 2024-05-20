@@ -1,0 +1,5 @@
+{
+	"html.format.preserveNewLines": true,
+	"html.format.wrapAttributes": "preserve",
+	"php.format.codeStyle": "PSR-12",
+}
