@@ -12,20 +12,28 @@
 	@vite('resources/js/app.js')
 </head>
 
-<body hx-ext="client-side-templates,response-targets">
-	<div id="app">
+<body
+	hx-ext="client-side-templates,response-targets"
+	hx-headers='{
+		"X-Requested-With": "XMLHttpRequest",
+		"X-XSRF-TOKEN": "{{ csrf_token() }}"
+	}'
+	hx-target-401="find .login"
+>
+	<div id="app" class="container">
 		<span class="text-3xl font-bold underline">Heya!</span>
 
 		<div id="notes"
 			hx-get="/api/notes"
 			hx-trigger="load"
-			hx-target="closest .ok"
-			hx-target-error="closest .error"
+			hx-target="find .ok"
 		>
 			<div class="ok"></div>
 			<div class="error"></div>
 		</div>
 	</div>
+
+	<div class="login"></div>
 </body>
 
 </html>

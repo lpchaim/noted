@@ -12,7 +12,7 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/token/create', function (Request $request) {
     $request->validate([
-        'email' => 'required|email',
+        'email' => ['required' | 'email'],
         'password' => 'required',
         'token_name' => 'required',
     ]);
